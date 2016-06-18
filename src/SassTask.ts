@@ -164,7 +164,7 @@ export class SassTask extends GulpTask<ISassTaskConfig> {
             ];
           } else if (!!content) {
             lines = [
-              'import { loadStyles } from \'load-themed-styles\';',
+              `import { loadStyles } from ${JSON.stringify(require.resolve('load-themed-styles'))};`,
               '',
               exportClassNames,
               '',
